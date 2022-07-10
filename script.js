@@ -59,6 +59,8 @@ document.querySelector('.btn').addEventListener('click', function () {
   document.querySelector('.score').textContent = scoreCountDown;
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('.number').textContent = '?';
+  document.querySelector('.number').style.width = '15rem';
   console.log(secretNumber);
 });
 
