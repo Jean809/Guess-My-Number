@@ -2,13 +2,14 @@
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let scoreCountDown = 20;
-let highScore = 20;
+const maximumNumber = 20;
+const minimumNumber = 1;
 
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
 
   //When the input of the user is invalid//
-  if (guess < 1 || guess > 20) {
+  if (guess < minimumNumber || guess > maximumNumber) {
     document.querySelector('.message').textContent = '⛔ Not a valid number';
   }
 
@@ -29,7 +30,6 @@ document.querySelector('.check').addEventListener('click', function () {
   //subtracts the scorecountdown until it reaches 0//
   if (guess !== secretNumber) {
     scoreCountDown--;
-    highScore--;
     document.querySelector('.score').textContent = scoreCountDown;
   }
 
@@ -42,16 +42,16 @@ document.querySelector('.check').addEventListener('click', function () {
   }
 
   //When guess is too high or low//
-  if (guess > secretNumber && guess <= 20) {
+  if (guess > secretNumber && guess <= maximumNumber) {
     document.querySelector('.message').textContent = '📈 Too high!';
-  } else if (guess < secretNumber && guess > 0) {
+  } else if (guess < secretNumber && guess > minimumNumber) {
     document.querySelector('.message').textContent = '📉 Too low!';
   }
 });
 
 //Reset botton "Again"//
 document.querySelector('.btn').addEventListener('click', function () {
-  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  secretNumber; //= Math.trunc(Math.random() * 20) + 1;//
   scoreCountDown = 20;
   document.querySelector('.score').textContent = scoreCountDown;
   document.querySelector('body').style.backgroundColor = '#222';
