@@ -60,7 +60,6 @@ document.querySelector('.btn').addEventListener('click', function () {
   document.querySelector('.number').textContent = '?';
   document.querySelector('.number').style.width = '15rem';
   document.querySelector('.guess').value = '';
-  console.log(secretNumber);
 });
 
 //problem #1: When "Again" is clicked we want to reset the score but not the highscore!//
