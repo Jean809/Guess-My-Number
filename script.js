@@ -1,7 +1,6 @@
 'use strict';
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
-console.log(secretNumber);
 let scoreCountDown = 20;
 let highScore = 20;
 
